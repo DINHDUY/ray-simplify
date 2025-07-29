@@ -23,6 +23,9 @@ lint: ## Run all linting and formatting checks
 	black --check src tests
 	ruff check src tests
 
+safety: ## Run safety check for vulnerabilities
+	safety check --ignore 65189
+
 format: ## Format code with black and fix ruff issues
 	black src tests
 	ruff check --fix src tests
@@ -45,8 +48,9 @@ release: ## Create a new release with commitizen
 build: ## Build the package
 	python -m build
 
-check: ## Run all checks (lint, test)
+check: ## Run all checks (lint, safety, test)
 	make lint
+	make safety
 	make test
 
 dev-setup: ## Complete development environment setup

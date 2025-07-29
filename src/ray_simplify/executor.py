@@ -107,7 +107,7 @@ class RayExecutor:
 
     @staticmethod
     def iter_futures(
-        futures: List[Union[ray.ObjectRef, ray.ObjectRefGenerator]]
+        futures: List[Union[ray.ObjectRef, ray.ObjectRefGenerator]],
     ) -> Generator[Any, None, None]:
         """Iterate over futures and yield results as they become available.
 

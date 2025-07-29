@@ -1,4 +1,3 @@
-
 # Write a simple example of how to use the parallelize decorator and run it in parallel.
 import logging
 import time
@@ -18,8 +17,9 @@ def calculate_square_in_sequence(numbers):
     """Calculate squares of numbers sequentially."""
     # Use regular map to execute the square function sequentially
     results = map(square, numbers)
-    
+
     return list(results)
+
 
 def calculate_square_in_parallel(numbers):
     """Calculate squares of numbers in parallel."""
@@ -47,7 +47,8 @@ if __name__ == "__main__":
     start_time = timeit.default_timer()
     results = calculate_square_in_parallel(numbers)
     duration_parallel = timeit.default_timer() - start_time
-    print(f"calculate_square_in_parallel() executed in {duration_parallel:.4f} seconds (including parallel context setup)")
+    print(
+        f"calculate_square_in_parallel() executed in {duration_parallel:.4f} seconds (including parallel context setup)"
+    )
     print("Results from parallel execution:")
     print(results)
-    

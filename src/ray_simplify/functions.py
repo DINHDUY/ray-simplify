@@ -134,7 +134,7 @@ def parallel_map(
 
 
 def parallel_iter(
-    futures: List[Union[ray.ObjectRef, ray.ObjectRefGenerator]]
+    futures: List[Union[ray.ObjectRef, ray.ObjectRefGenerator]],
 ) -> Generator[Any, None, None]:
     """Iterate over Ray futures and yield results as they become available.
 

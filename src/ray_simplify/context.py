@@ -231,7 +231,7 @@ class ParallelContext:
 
     @staticmethod
     def _iter(
-        futures: List[Union[ray.ObjectRef, ray.ObjectRefGenerator]]
+        futures: List[Union[ray.ObjectRef, ray.ObjectRefGenerator]],
     ) -> Generator[Any, None, None]:
         """Iterate over futures and yield results as they become available.
 

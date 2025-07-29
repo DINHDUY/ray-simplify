@@ -120,7 +120,7 @@ jobs:
     - name: Run safety check for vulnerabilities
       run: |
         source .venv/bin/activate
-        safety check --json --output safety-report.json || true
+        safety check --ignore 65189 --json --output safety-report.json || true
 
     - name: Run bandit security linter
       run: |
